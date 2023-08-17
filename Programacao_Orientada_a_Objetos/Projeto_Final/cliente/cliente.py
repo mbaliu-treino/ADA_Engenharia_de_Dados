@@ -1,9 +1,11 @@
 # entidades.py
 from __future__ import annotations
 from datetime import datetime, date
-from typing import List
+from typing import List, TypeVar
+Venda = TypeVar('Venda')
 
-import cadastro_clientes
+
+# import cadastro_clientes
 
 
 # ERROR CLASS
@@ -13,7 +15,7 @@ class CPF_Error(Exception):
 
 # CLASSES
 class Cliente:
-    cadastro_obj = cadastro_clientes.CadastroClientes()
+    # cadastro_obj = cadastro_clientes.CadastroClientes()
 
     def __init__(self, cpf: str, nome: str, data_nascimento: str):
         """
@@ -33,7 +35,7 @@ class Cliente:
         self.__data_nascimento: date = self.casting_data_nascimento( data_nascimento )
         self.__historico_compras: List = []
 
-        self.cadastro_obj.adicionar_cliente(self)  # <<<
+        # self.cadastro_obj.adicionar_cliente(self)  # <<<
 
 
     @property
