@@ -79,3 +79,7 @@ print('======== Funcionalidade (busca de CPF) verificada ========\n')
 # print(cadastro_teste._cadastro_clientes)
 
 
+
+
+
+

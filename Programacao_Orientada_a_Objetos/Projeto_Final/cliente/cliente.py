@@ -16,8 +16,11 @@ class Cliente:
     cadastro_obj = cadastro_clientes.CadastroClientes()
 
     def __init__(self, cpf: str, nome: str, data_nascimento: str):
-        """ARGS
-            data_nascimento: str ('01/01/1990')
+        """
+        Parâmetros
+        ----------
+            data_nascimento : str 
+                Exemplo: '01/02/1990' ou '1990-02-01'
         """
         # Valida o CPF
         cpf_str = cpf.zfill(11)
@@ -35,7 +38,7 @@ class Cliente:
 
     @property
     def idade(self) -> int:
-        """Retorna o cálculo da idade."""
+        """ Retorna o cálculo da idade. """
         hoje = datetime.today()
         idade = hoje.year - self.data_nascimento.year
         # Correção do mês
@@ -62,7 +65,7 @@ class Cliente:
 
     @classmethod
     def cpf_valido(cls, cpf_str: str) -> bool:
-        """Validar de CPF. Verifica o tamnho e o sufixo de verificação."""
+        """ Validar de CPF. Verifica o tamnho e o sufixo de verificação. """
 
         if len(cpf_str) != 11:
             # raise CPF_Error('O CPF inserido é inválido! Número de digitos incompatível.')
@@ -75,7 +78,7 @@ class Cliente:
 
     @classmethod
     def casting_data_nascimento(cls, data_nascimento_str: str) -> date:
-        """Transforma o string da data de nascimento."""
+        """ Transforma o string da data de nascimento. """
         if '/' in data_nascimento_str:
             return datetime.strptime(data_nascimento_str, '%d/%m/%Y').date()
         else:

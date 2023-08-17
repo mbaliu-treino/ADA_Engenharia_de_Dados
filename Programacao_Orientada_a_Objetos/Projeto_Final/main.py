@@ -1,6 +1,8 @@
 # PROGRAMA DE E-COMMERCE DE FARMÁCIA
+import sistema_farmacia
 import sef_layouts
-from cliente.cadastro_clientes import CadastroClientes
+
+from cliente import CadastroClientes
 
 
 def mostrar_menu():
@@ -13,6 +15,8 @@ def mostrar_menu():
 if __name__ == '__main__':
     """ Execução do sistema de e-commerce. """
     print('======== SISTEMA DE E-COMMERCE DE FARMÁRCIA ========')
+
+    sistema_farmacia = sistema_farmacia.Farmacia()
     
     # MENU
     mostrar_menu()
