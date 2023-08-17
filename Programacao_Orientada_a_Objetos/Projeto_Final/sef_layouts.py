@@ -4,10 +4,11 @@
 _layout_menu = """
 Escolha a opção que deseja realizar:
 
-    1 - Realizar venda.
-    2 - Buscar medicamento.
+    1 - Realizar venda. [NÃO IMPLEMENTADO]
+    2 - Buscar medicamento. [NÃO IMPLEMENTADO]
     3 - Buscar cliente por CPF.
-    4 - Gerar relatório das vendas.
+    4 - Gerar relatório das vendas. [NÃO IMPLEMENTADO]
+    5 - Sair
 """
 
 class menu:
