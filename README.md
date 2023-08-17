@@ -3,7 +3,7 @@
 Repositório de estudos realizados durante o curso da ADA Tech na trilha de Engenharia de Dados
 
 
-## LÓGICA DE PROGRAMAÇÃO II
+## 2. LÓGICA DE PROGRAMAÇÃO II
 
 **Conteúdo**
 
@@ -21,7 +21,7 @@ Repositório de estudos realizados durante o curso da ADA Tech na trilha de Enge
 De [projeto final do módulo](https://github.com/mbaliu-treino/ADA_Engenheria_de_Dados/blob/main/Logica_de_Programacao_II/Projeto_Final-Sistema_Registros.ipynb.ipynb) foi desenvolvido um sistema de cadastro em Python para praticar os principais conceitos de engenharia de software.
 
 
-## Programação Orientada a Objetos (Python)
+## 2. Programação Orientada a Objetos (Python)
 
 A programação orientada a objetos (*OOP*) é um dos principais paradigmas de programação atualmente no campo da engenharia de softwares. 
 Este paradigma possibilita diversas estragégias para aumentar a capacidade de reutilização de códigos, garantindo maior consistência a eles.
@@ -36,3 +36,5 @@ Este paradigma possibilita diversas estragégias para aumentar a capacidade de r
 * Herança e Composição
 * Métodos mágicos
 * Clean Code: PEP 8, Typing Hint (PEP 484)
+
+Projeto Final: [Sistema de e-commerce para uma Farmácia](./Programacao_Orientada_a_Objetos/Projeto_Final/README.md)
