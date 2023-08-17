@@ -1,4 +1,4 @@
-# ADA_Engenharia_de_Dados
+# ADA Engenharia de Dados
 
 Repositório de estudos realizados durante o curso da ADA Tech na trilha de Engenharia de Dados
 
