@@ -1,5 +1,6 @@
 # PROGRAMA DE E-COMMERCE DE FARMÁCIA
 import sef_layouts
+from cliente.cadastro_clientes import CadastroClientes
 
 
 def mostrar_menu():
@@ -17,25 +18,31 @@ if __name__ == '__main__':
     mostrar_menu()
     while True:
 
-        entrada_user = input('\n1Insira o número da operação desejada: ')
+        opcao = input('\nInsira o número da operação desejada: ')
 
-        if entrada_user == '1':
+        if opcao == '1':
             # Venda
             print('1 - Realizar venda')
             pass
-        elif entrada_user == '2':
+        elif opcao == '2':
             # Consulta de medicamento
             print('1 - Realizar venda')
             pass
-        elif entrada_user == '3':
+        elif opcao == '3':
             # Consulta de cliente
             print('3 - Buscar cliente por CPF')
-            pass
-        elif entrada_user == '4':
+            procurar_cpf = input('Digite o CPF do cliente desejado: ')
+
+            resultado_da_busca = CadastroClientes.buscar_cliente_por_cpf(procurar_cpf)
+            if resultado_da_busca == None:
+                print('CPF não encontrado!')
+                #TODO -> Voltar ao menu
+                #TODO -> Pedir outro CPF
+        elif opcao == '4':
             # Relatório das vendas
             print('4 - Gerar relatório das vendas')
             pass
-        elif entrada_user == '5':
+        elif opcao == '5':
             # Sair da execução
             print('5 - Sair')
             break
