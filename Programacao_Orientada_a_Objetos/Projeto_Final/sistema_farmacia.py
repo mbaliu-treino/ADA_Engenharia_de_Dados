@@ -1,5 +1,7 @@
 from cliente import CadastroClientes
 from cliente import Cliente
+from cliente import Cliente_Error, CPF_Error
+
 
 class Farmacia:
     def __init__(self):
@@ -14,15 +16,15 @@ class Farmacia:
         cliente_2 = Cliente('5'*11, 'Maria de Aparecida', '01/05/1950')
         cliente_3 = Cliente('6'*11, 'Pedro Souza', '01/12/2005')
         cliente_4 = Cliente('7'*11, 'Raquel Fiori', '19/08/2000')
-
+        
         self.cadastro_clientes.adicionar_cliente(cliente_1)
         self.cadastro_clientes.adicionar_cliente(cliente_2)
         self.cadastro_clientes.adicionar_cliente(cliente_3)
         self.cadastro_clientes.adicionar_cliente(cliente_4)
 
-
-
-    @staticmethod
-    def __teste_criar_usuarios():
-        """ Cria um conjunto de usuários no Cadastro de Clientes para a testagem do programa. """
-        pass
+        try:
+            cliente_5 = Cliente('191', 'Marcelo', '01/05/1950')
+            self.cadastro_clientes.adicionar_cliente(cliente_5)
+        except Cliente_Error as e:
+            print('ERRO: Cliente não adicionado! Não é possível usar o mesmo CPF.')
+            print(f'[Cliente "{e.args[1].nome}:{e.args[1].cpf}" não pode sobrepor "{e.args[2].nome}:{e.args[2].cpf}"]')

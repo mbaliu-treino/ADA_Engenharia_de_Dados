@@ -30,7 +30,12 @@ class CadastroClientes:
         if obj_cliente.cpf not in self.__cadastro_clientes.keys():
             self.__cadastro_clientes[obj_cliente.cpf] = obj_cliente
         else:
-            raise Cliente_Error('CPF já cadastro.')
+            obj_cliente_novo = obj_cliente
+            obj_cliente_existente = self.__cadastro_clientes[obj_cliente.cpf]
+            raise Cliente_Error(
+                'CPF já cadastro.', 
+                obj_cliente_novo, 
+                obj_cliente_existente)
 
     def mostrar_clientes(self) -> List[Cliente_]:  
         """ Retorna todos clientes do cadastro. """
