@@ -1,17 +1,10 @@
 # entidades.py
 from __future__ import annotations
-from datetime import datetime, date
 from typing import List, TypeVar
-
 Venda = TypeVar('Venda')
 
-
-# import cadastro_clientes
-
-
-# ERROR CLASS
-class CPF_Error(Exception):
-    pass
+from datetime import datetime, date
+from .c_exceptions import CPF_Error
 
 
 # CLASSES
