@@ -16,7 +16,10 @@ if __name__ == '__main__':
     """ Execução do sistema de e-commerce. """
     print('======== SISTEMA DE E-COMMERCE DE FARMÁRCIA ========')
 
+    # Inicialização do sistema (cadastros)
     sistema_farmacia = sistema_farmacia.Farmacia()
+    print('(Sistema inicializado com sucesso)')
+    
     
     # MENU
     mostrar_menu()

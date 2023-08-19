@@ -1,8 +1,9 @@
 #TODO>>> Proteger a edição dos objetos dentro do dicionário
 
 from __future__ import annotations
-from typing import List, Optional
-from cliente import Cliente
+from typing import List, Optional, TypeVar
+Cliente = TypeVar('Cliente')
+# from cliente import Cliente  #TODO >> remover 
 
 
 class CadastroClientes:

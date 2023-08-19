@@ -12,6 +12,7 @@ Escolha a opção que deseja realizar:
 """
 
 class menu:
+    """ Menu incial do programa. """
     def __init__(self):
         self._layout_menu = _layout_menu
 
