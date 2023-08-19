@@ -2,7 +2,8 @@
 
 from __future__ import annotations
 from typing import List, Optional, TypeVar
-Cliente = TypeVar('Cliente')
+# from cliente import Cliente
+# Cliente = TypeVar('Cliente')
 # from cliente import Cliente  #TODO >> remover 
 
 
@@ -38,8 +39,9 @@ class CadastroClientes:
                 None caso não encontre nenhum clinte com o CPF.
         """
 
-        if cpf in self.__cadastro_clientes.keys():
-            return self.__cadastro_clientes[cpf]
+        cpf_str = cpf.zfill(11)
+        if cpf_str in self.__cadastro_clientes.keys():
+            return self.__cadastro_clientes[cpf_str]
         else:
             return None
         

@@ -3,6 +3,7 @@ import sistema_farmacia
 import sef_layouts
 
 from cliente import CadastroClientes
+from cliente import Cliente
 
 
 
@@ -16,10 +17,11 @@ if __name__ == '__main__':
     print('(Sistema inicializado com sucesso)')
     
 
-    # MENU
-    print( sef_layouts.menu() )
 
     while True:
+        # MENU
+        print('== MENU ==')
+        print( sef_layouts.menu() )
 
         opcao = input('\nInsira o número da operação desejada: ')
 
@@ -36,11 +38,23 @@ if __name__ == '__main__':
             print('3 - Buscar cliente por CPF')
             procurar_cpf = input('Digite o CPF do cliente desejado: ')
 
-            resultado_da_busca = CadastroClientes.buscar_cliente_por_cpf(procurar_cpf)
-            if resultado_da_busca == None:
+            # Busca do cliente
+            obj_cliente = sistema.cadastro_clientes.buscar_cliente_por_cpf(procurar_cpf)
+
+            # Validação
+            if obj_cliente == None:
                 print('CPF não encontrado!')
                 #TODO -> Voltar ao menu
                 #TODO -> Pedir outro CPF
+            else:
+                print(  f'\nDADOS DO CLIENTE\n--------------------\n'
+                      + f'  Nome do cliente: {obj_cliente.nome},\n'
+                      + f'  CPF: {obj_cliente.cpf},\n'
+                      + f'  Idade: {obj_cliente.idade},\n'
+                      + f'  Data de nascimento: {obj_cliente.data_nascimento}\n'
+                      + f'  Histórico de compras:\n...\n...\n...')
+
+                break
         elif opcao == '4':
             # Relatório das vendas
             print('4 - Gerar relatório das vendas')

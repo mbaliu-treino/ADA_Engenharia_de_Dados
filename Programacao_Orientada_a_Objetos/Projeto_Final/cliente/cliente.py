@@ -2,6 +2,7 @@
 from __future__ import annotations
 from datetime import datetime, date
 from typing import List, TypeVar
+
 Venda = TypeVar('Venda')
 
 
@@ -32,7 +33,7 @@ class Cliente:
             raise CPF_Error(f'O CPF inserido ({cpf_str}) é inválido! CPF não existente.')
 
         self.nome: str = nome
-        self.__data_nascimento: date = self.casting_data_nascimento( data_nascimento )
+        self.__data_nascimento: date = self._casting_data_nascimento( data_nascimento )
         self.__historico_compras: List = []
 
         # self.cadastro_obj.adicionar_cliente(self)  # <<<
@@ -79,7 +80,7 @@ class Cliente:
 
 
     @classmethod
-    def casting_data_nascimento(cls, data_nascimento_str: str) -> date:
+    def _casting_data_nascimento(cls, data_nascimento_str: str) -> date:
         """ Transforma o string da data de nascimento. """
         if '/' in data_nascimento_str:
             return datetime.strptime(data_nascimento_str, '%d/%m/%Y').date()
