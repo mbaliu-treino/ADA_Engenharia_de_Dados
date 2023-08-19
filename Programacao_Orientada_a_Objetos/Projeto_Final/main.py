@@ -12,7 +12,7 @@ if __name__ == '__main__':
     print('======== SISTEMA DE E-COMMERCE DE FARMÁRCIA ========')
 
     # Inicialização do sistema (cadastros)
-    sistema_farmacia = sistema_farmacia.Farmacia()
+    sistema = sistema_farmacia.Farmacia()
     print('(Sistema inicializado com sucesso)')
     
 
