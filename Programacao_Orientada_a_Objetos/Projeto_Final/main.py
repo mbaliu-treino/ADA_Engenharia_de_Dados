@@ -5,24 +5,20 @@ import sef_layouts
 from cliente import CadastroClientes
 
 
-def mostrar_menu():
-    # Exibe layout predefinido do menu
-    layout_menu = sef_layouts.menu()
-    print(layout_menu)
-
 
 
 if __name__ == '__main__':
-    """ Execução do sistema de e-commerce. """
+    # Execução do sistema de e-commerce.
     print('======== SISTEMA DE E-COMMERCE DE FARMÁRCIA ========')
 
     # Inicialização do sistema (cadastros)
     sistema_farmacia = sistema_farmacia.Farmacia()
     print('(Sistema inicializado com sucesso)')
     
-    
+
     # MENU
-    mostrar_menu()
+    print( sef_layouts.menu() )
+
     while True:
 
         opcao = input('\nInsira o número da operação desejada: ')

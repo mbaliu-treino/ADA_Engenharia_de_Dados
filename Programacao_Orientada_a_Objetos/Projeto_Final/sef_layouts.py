@@ -18,3 +18,7 @@ class menu:
 
     def __repr__(self) -> str:
         return self._layout_menu
+    
+    @staticmethod
+    def mostrar_menu():
+        print(_layout_menu)
