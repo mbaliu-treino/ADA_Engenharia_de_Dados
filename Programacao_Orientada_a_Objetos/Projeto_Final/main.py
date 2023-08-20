@@ -31,6 +31,7 @@ if __name__ == '__main__':
         if opcao == '1':
             # Venda
             print('1 - Realizar venda')
+            sleep(1)
             pass
         elif opcao == '2':
             # Consulta de medicamento
@@ -61,13 +62,28 @@ if __name__ == '__main__':
                         print(f'  {idx+1} - {mdcmt.nome}')
 
                     opcao_mdcmt = input('Selecione o número do medicamento: ')
+                    sleep(1)
+                    pass
 
             elif opcao_sub == '3':
                 # Buscar por tipo
-                pass
+                lab_nome = input('Digite o tipo de medimento (quimio ou fito; Q ou F): ')
+                mdcmt_lista = sistema.cadastro_medicamentos.buscar_medicamento_por_tipo(lab_nome)
+
+                # Menu para escolher o remédio
+                if len(mdcmt_lista) == 0:
+                    print('Nenhum medicamento deste tipo foi encontrado.')
+                else:
+                    print('Os seguintes remédios foram encontrados:')
+                    for idx, mdcmt in enumerate(mdcmt_lista):
+                        print(f'  {idx+1} - {mdcmt.nome}')
+
+                    opcao_mdcmt = input('Selecione o número do medicamento: ')
+                    sleep(1)
+                    pass
             else:
                 print('Opção inválida.')
-            
+                sleep(1)
 
             break #DEBUG
         elif opcao == '3':
@@ -90,14 +106,17 @@ if __name__ == '__main__':
                       + f'  Idade: {obj_cliente.idade},\n'
                       + f'  Data de nascimento: {obj_cliente.data_nascimento}\n'
                       + f'  Histórico de compras:\n...\n...\n...')
+            sleep(1)
 
         elif opcao == '4':
             # Relatório das vendas
             print('4 - Gerar relatório das vendas')
+            sleep(1)
             pass
         elif opcao == '5':
             # Sair da execução
             print('5 - Sair')
+            sleep(1)
             break
         else:
             # Entrada errada
@@ -105,4 +124,6 @@ if __name__ == '__main__':
 
     # Finalização da aplicação
     print('\nSalvando sistema de vendas...')
+    sleep(1)
     print('Sistema finalizado. Até em breve!')
+    
