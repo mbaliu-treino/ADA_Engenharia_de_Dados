@@ -35,17 +35,27 @@ class Farmacia:
 
         # CADASTRO DE MEDICAMENTOS TESTE
         if True:
-            lista_medicamentos = [
-                {'nome': 'remedio A', 'composto_principal': 'C1', 'laboratorio': 'L1', 'descricao': 'Medicamento para dores.', 'preco': 100.5},
-                {'nome': 'remedio B', 'composto_principal': 'C2', 'laboratorio': 'L2', 'descricao': 'Medicamento para dores.', 'preco': 150},
+            lista_medicamentos_fito = [
+                {'nome': 'remedio A', 'composto_principal': 'F1', 'laboratorio': 'L1', 'descricao': 'Medicamento para dores.', 'preco': 100.5},
+                {'nome': 'remedio B', 'composto_principal': 'F2', 'laboratorio': 'L2', 'descricao': 'Medicamento para dores.', 'preco': 150},
                 ]
+            lista_medicamentos_quimio = [
+                {'nome': 'remedio Quimio A', 'composto_principal': 'Q1', 'laboratorio': 'L1', 'descricao': 'Medicamento para dores.', 'preco': 100.5, 'req_receita': False},
+                {'nome': 'remedio Quimio B', 'composto_principal': 'Q2', 'laboratorio': 'L3', 'descricao': 'Medicamento para dores.', 'preco': 300, 'req_receita': True},
+                ]
+            
 
-            mfA = MedicamentoFito(**lista_medicamentos[0])
-            mfB = MedicamentoFito(**lista_medicamentos[1])
+            mfA = MedicamentoFito(**lista_medicamentos_fito[0])
+            mfB = MedicamentoFito(**lista_medicamentos_fito[1])
             print('>>> medicamentos criados')
-
             print('>>>', mfA.nome, mfA.composto_principal, mfA.descricao, mfA.laboratorio)
-
             self.cadastro_medicamentos.adicionar_medicamento(mfA)
             self.cadastro_medicamentos.adicionar_medicamento(mfB)
+            print('>>> Medimaentos adicionados')
+
+            mqA = MedicamentoQuimio(**lista_medicamentos_quimio[0])
+            mqB = MedicamentoQuimio(**lista_medicamentos_quimio[1])
+            print('>>> medicamentos criados')
+            self.cadastro_medicamentos.adicionar_medicamento(mqA)
+            self.cadastro_medicamentos.adicionar_medicamento(mqB)
             print('>>> Medimaentos adicionados')
