@@ -59,8 +59,7 @@ class CadastroClientes:
         cpf_str = cpf.zfill(11)
         if cpf_str in self.__cadastro_clientes.keys():
             return self.__cadastro_clientes[cpf_str]
-        else:
-            return None
+        return None
         
 
 

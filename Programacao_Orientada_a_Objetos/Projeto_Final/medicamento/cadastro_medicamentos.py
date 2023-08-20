@@ -16,6 +16,7 @@ class CadastroMedicamentos:
         """ Adiciona um objeto Medicamento ao banco de cadastros. """
         self.__cadastro_medicamentos.append( obj_medicamento )
 
+
     def buscar_medicamento_por_nome(self, nome: str) -> Optional[Medicamento_obj]:
         """ Retorna o objeto de medicamento do nome buscado. 
         Caso nenhum medicamento seja encontrado será retornado None.
@@ -33,8 +34,7 @@ class CadastroMedicamentos:
         for mdcmt in self.__cadastro_medicamentos:
             if mdcmt.nome == nome:
                 return mdcmt
-            else:
-                return None
+        return None
         
     def buscar_medicamento_por_laboratorio(self, lab_nome: str) -> List[Medicamento_obj]:
         """ Retorna o objeto de medicamento do ____ buscado. 
