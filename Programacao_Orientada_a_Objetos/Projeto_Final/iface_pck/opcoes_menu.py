@@ -2,6 +2,7 @@ import sef_layouts
 from vendas_pck.venda import Vendas
 from cliente_pkg import Cliente
 from cliente_pkg import Cliente_Error, CPF_Error
+from medicamento_pkg import MedicamentoQuimio
 
 from time import sleep
 
@@ -37,7 +38,6 @@ class OpcoesMenu:
 
     @staticmethod
     def opcao_1_processo_venda(sistema):
-        sistema = sistema_farmacia.Farmacia(preset=True, log=False)  #DEBUGGER
         """ Implementa a interface de venda. 
 
         Argumentos
@@ -74,20 +74,29 @@ class OpcoesMenu:
                         # Encerra as compras
                         if add_produto_input in ('N', 'n'):
                             break
-
-                        # ... mostrar os produtos disponíveis
-                        # ... ADICIONAR PRODUTO
-                        # exigir receita
+                        
+                        # Produtos disponíveis
+                        print('\nQual produto deseja comprar?')
+                        lista_produtos = sistema.cadastro_medicamentos.mostrar_medicamentos()
+                        for idx, mdcmt in enumerate(lista_produtos):
+                            print(f'  {idx+1}. {mdcmt.nome} - R$ {mdcmt.preco:.2f}.')
+                        
+                        escolha_user = int(input('Por favor, escolha o número do produto desejado: '))
+                        if escolha_user in range(1, len(lista_produtos)+1):
+                            mdcmt = lista_produtos[escolha_user-1]
+                            v.adicionar_produto( mdcmt )
+                        else:
+                            print('Número não válido!')
                     
                     # Finalização das compras
-                    print('Finalizando compras ...')
-                    print(f'O valor das compra é de R${v.valor_total:.2f}')
+                    print('Finalizando compras ...\n\nRECIBO DE VENDA')
+                    print(f'O valor das compra é de R$ {v.valor_total:.2f}')
                     print(f'O cliente recebeu desconto de {v.desconto_total():.2%}\n')
-                    print(f'Valor a ser pago: R$ {v.valor_total_final:.2f}')
+                    print(f'Valor a ser pago: R$ {v.valor_total_final:.2f}\n')
                     
 
                     # Adição do registro de venda nos registros
-                    # ... ADICIONAR NO HISTÓRICO
+                    sistema.cadastro_vendas.adicionar_venda( v )
                     cliente_inst.ADD_compra( v )
 
                     sleep(2)
@@ -262,5 +271,9 @@ class OpcoesMenu:
 
         # Relatório das vendas
         print('4 - Gerar relatório das vendas')
+
+        # sistema = sistema_farmacia.Farmacia(preset=True, log=False)  #DEBUGGER
+        # Medicamentos por ordem alfabetica
+        sistema.cadastro_medicamentos.relatorio_ordem_alfabeta()
         sleep(1)
         pass

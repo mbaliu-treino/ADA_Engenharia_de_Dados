@@ -78,4 +78,12 @@ class CadastroMedicamentos:
             if isinstance(mdcmt, tipo_buscado):
                 resultado.append(mdcmt)
         return resultado
+
+    def relatorio_ordem_alfabeta(self):
+        dict_mdcmts = { mdcmt.nome: mdcmt for mdcmt in self.__cadastro_medicamentos }
+        mdcmts_cresc = sorted(dict_mdcmts)
+        for i in mdcmts_cresc:
+            print( dict_mdcmts[ mdcmts_cresc ].detalhes_str )
+
+
         

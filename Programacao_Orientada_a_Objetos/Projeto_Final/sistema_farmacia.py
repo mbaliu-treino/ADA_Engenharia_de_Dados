@@ -22,7 +22,7 @@ class Farmacia:
             if True:
                 # [TODO >> pode ser alterado para um registro persistido em um arquivo]
 
-                cliente_1 = Cliente('191', 'Joao Carlos', '01/05/1950')
+                cliente_1 = Cliente('9'*11, 'Joao Carlos', '01/05/1950')
                 cliente_2 = Cliente('5'*11, 'Maria de Aparecida', '01/05/1950')
                 cliente_3 = Cliente('6'*11, 'Pedro Souza', '01/12/2005')
                 cliente_4 = Cliente('7'*11, 'Raquel Fiori', '19/08/2000')
@@ -43,11 +43,13 @@ class Farmacia:
             if True:
                 lista_medicamentos_fito = [
                     {'nome': 'remedio A', 'composto_principal': 'F1', 'laboratorio': 'L1', 'descricao': 'Medicamento para dores.', 'preco': 100.5},
-                    {'nome': 'remedio B', 'composto_principal': 'F2', 'laboratorio': 'L2', 'descricao': 'Medicamento para dores.', 'preco': 150},
+                    {'nome': 'remedio B', 'composto_principal': 'F2', 'laboratorio': 'L2', 'descricao': 'Medicamento para tosse.', 'preco': 150},
+                    {'nome': 'remedio C', 'composto_principal': 'F3', 'laboratorio': 'L2', 'descricao': 'Medicamento para resfriado.', 'preco': 15},
                     ]
                 lista_medicamentos_quimio = [
                     {'nome': 'remedio Quimio A', 'composto_principal': 'Q1', 'laboratorio': 'L1', 'descricao': 'Medicamento para dores.', 'preco': 100.5, 'req_receita': False},
-                    {'nome': 'remedio Quimio B', 'composto_principal': 'Q2', 'laboratorio': 'L3', 'descricao': 'Medicamento para dores.', 'preco': 300, 'req_receita': True},
+                    {'nome': 'remedio Quimio B', 'composto_principal': 'Q2', 'laboratorio': 'L3', 'descricao': 'Medicamento para tosse.', 'preco': 300, 'req_receita': True},
+                    {'nome': 'remedio Quimio C', 'composto_principal': 'Q3', 'laboratorio': 'L2', 'descricao': 'Medicamento para resfriado.', 'preco': 10, 'req_receita': True},
                     ]
                 
 

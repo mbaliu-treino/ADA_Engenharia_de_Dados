@@ -22,6 +22,10 @@ class Vendas:
         
         Verifica se algum produto é de venda controlada. Caso não seja confirmada 
         o recebimento de receita o produto não é adicionado.
+
+        Parâmetro
+        ---------
+        produtos_vendidos : inst Medicamento
         """
 
         for mdcmt in produtos_vendidos:
