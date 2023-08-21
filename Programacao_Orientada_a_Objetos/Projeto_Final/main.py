@@ -6,6 +6,7 @@ from time import sleep
 
 from cliente import CadastroClientes
 from cliente import Cliente
+from iface_pck import opcoes_menu
 
 
 
@@ -53,10 +54,11 @@ if __name__ == '__main__':
                 lab_nome = input('Digite o nome do laboratório: ')
                 mdcmt_lista = sistema.cadastro_medicamentos.buscar_medicamento_por_laboratorio(lab_nome)
 
-                # Menu para escolher o remédio
                 if len(mdcmt_lista) == 0:
+                    # Nenhum medicamento encontrado
                     print('Nenhum medicamento deste laboratório foi encontrado.')
                 else:
+                    # Menu para escolher o remédio
                     print('Os seguintes remédios foram encontrados:')
                     for idx, mdcmt in enumerate(mdcmt_lista):
                         print(f'  {idx+1} - {mdcmt.nome}')
