@@ -6,9 +6,16 @@ class Vendas:
     desconto_valor = 0.1
 
     def __init__(self, cliente):
+        """
+        Parâmetros
+        ----------
+        cliente (inst Cliente)
+            Instância do cliente da operação.
+        """
         self.hora = datetime.now()
         self.cliente = cliente
         self._lista_de_produtos = []
+
 
     def adicionar_produto(self, *produtos_vendidos):
         """ Adiciona um produto à lista de vendas. 
@@ -66,8 +73,10 @@ class Vendas:
         """ Calcula o varlo final com desconto. """
         return self.valor_total * (1 - self.desconto_total)
 
-# TESTE
+
+# TESTE - 
 # v = Vendas('Marcelo')
 # v.adicionar_produto(1,1,1,1,1)
+# v._lista_de_produtos = [1,1,1,1,1]
 # print(v._lista_de_produtos)
-# print(v.valor_total)
+# print(v.valor_total_final)

@@ -1,11 +1,9 @@
-import sistema_farmacia
-import sef_layouts
-from time import sleep
 
-from iface_pck.opcoes_menu import OpcoesMenu
-from vendas_pck.venda import Vendas
+def teste_venda():
+    import sistema_farmacia
+    from cliente_pkg import Cliente
+    from vendas_pck.venda import Vendas
 
-
-sistema = sistema_farmacia.Farmacia()
-
-v = Vendas()
+    sistema = sistema_farmacia.Farmacia()
+    cliente_1 = Cliente('191', 'Joao Carlos', '01/05/1950')
+    v = Vendas(cliente_1)

@@ -1,25 +1,16 @@
 import sef_layouts
+from vendas_pck.venda import Vendas
+from cliente_pkg import Cliente
+from cliente_pkg import Cliente_Error, CPF_Error
 
 from time import sleep
+
+import sistema_farmacia  #DEBUGGER
+
 
 class OpcoesMenu:
     def __init__(self):
         pass
-
-    @staticmethod
-    def opcao_1_processo_venda(sistema):
-        """ Implementa a interface de venda. 
-
-        Argumentos
-        ----------
-        sistema : objeto Farmacia
-            Instância do sistema de farmácia em utilização.
-        """
-
-        print('1 - Realizar venda')
-        sleep(1)
-        pass
-
 
     @staticmethod
     def manter_busca_continua():
@@ -31,7 +22,70 @@ class OpcoesMenu:
             return False
         else:
             return True
+        
 
+    @staticmethod
+    def opcao_1_processo_venda(sistema):
+        sistema = sistema_farmacia.Farmacia(preset=True, log=False)  #DEBUGGER
+        """ Implementa a interface de venda. 
+
+        Argumentos
+        ----------
+        sistema : objeto Farmacia
+            Instância do sistema de farmácia em utilização.
+        """
+
+        print('1 - Realizar venda')
+        
+        busca_continua = True
+        while busca_continua:
+            # Verificação de cadastro
+            opcao_cliente = input('O cliente já tem cadastro? (Y ou N) ')
+            if opcao_cliente in ('Y', 'y'):
+                # Realização de venda
+
+                # Seleção de cliente pelo CPF
+                cpf_cliente = input('Digite o CPF do cliente: ')
+                cliente_inst = sistema.cadastro_clientes.buscar_cliente_por_cpf(cpf_cliente)
+                if cliente_inst is None:
+                    print('Cliente não encontrado.\n')
+                else:
+                    print('Venda inicializada:')
+                    v = Vendas(cliente_inst)
+                    # ...
+                
+            elif opcao_cliente in ('N', 'n'):
+                # Verificação se continua cadastro
+                opcao_venda = input('Deseja cadastrar um novo cliente ou cancelar a venda? (Y ou N) ')
+                if opcao_venda in ('Y', 'y'):
+                    # Cadastrar novo cliente
+                    print('Cadastrar um novo cliente')
+                    # Dados do usuário
+                    cliente_nome = input('Qual o nome do cliente? ')
+                    cliente_cpf = input('Qual o CPF do cliente? (sem pontos ou barra) ')
+                    cliente_data_nasc = input('Qual a data de nascimento? (dd/mm/aaaa ou aaaa-mm-dd) ')
+
+                    # Criação do uário
+                    cliente_novo = Cliente(nome=cliente_nome, cpf=cliente_cpf, data_nascimento=cliente_data_nasc)
+                    try:
+                        sistema.cadastro_clientes.adicionar_cliente( cliente_novo )
+                        print('Cliente criado!\n')
+                    except Cliente_Error as e:
+                        print('>>> ERRO: Cliente não adicionado! Não é possível usar o mesmo CPF.')
+                        print(f'>>> [Cliente "{e.args[1].nome}:{e.args[1].cpf}" não pode sobrepor "{e.args[2].nome}:{e.args[2].cpf}"]\n')
+                        sleep(1)
+
+                elif opcao_cliente in ('N', 'n'):
+                    print('\n')
+                else:
+                    print('Opção inválida\n')
+            else:
+                print('Opção inválida\n')
+
+            busca_continua = OpcoesMenu.manter_busca_continua()
+
+        sleep(1)
+        
 
     @staticmethod
     def opcao_2_busca_medicamento(sistema):
