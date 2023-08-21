@@ -40,7 +40,6 @@ class Vendas:
                 self._lista_de_produtos.append(mdcmt)
                 
 
-    @classmethod
     def desconto_total(self):
         """ Retorna o porcentual de desconto para o caso da venda. 
 
@@ -71,7 +70,7 @@ class Vendas:
     @property
     def valor_total_final(self):
         """ Calcula o varlo final com desconto. """
-        return self.valor_total * (1 - self.desconto_total)
+        return self.valor_total * (1 - self.desconto_total())
 
 
 # TESTE - 

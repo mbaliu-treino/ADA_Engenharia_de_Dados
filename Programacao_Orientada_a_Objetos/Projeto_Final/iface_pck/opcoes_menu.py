@@ -15,10 +15,21 @@ class OpcoesMenu:
     @staticmethod
     def manter_busca_continua():
         """ Função auxiliar de entrada de usuário para manter o loop """
-        opcao_busca = input('Contiuar pesquisa (1) ou voltar ao menu inicial (2)? ')
+        opcao_busca = input('Continuar pesquisa (1) ou voltar ao menu inicial (2)? ')
         if opcao_busca == '1':
             return True
         elif opcao_busca == '2':
+            return False
+        else:
+            return True
+        
+    @staticmethod
+    def manter_operacao_continua():
+        """ Função auxiliar de entrada de usuário para manter o loop """
+        opcao_operacao = input('Continuar operação (1) ou voltar ao menu inicial (2)? ')
+        if opcao_operacao == '1':
+            return True
+        elif opcao_operacao == '2':
             return False
         else:
             return True
@@ -51,8 +62,37 @@ class OpcoesMenu:
                     print('Cliente não encontrado.\n')
                 else:
                     print('Venda inicializada:')
+
+                    # Operação de venda
                     v = Vendas(cliente_inst)
-                    # ...
+
+                    # Produtos
+                    add_produto = True
+                    while add_produto:
+                        add_produto_input = input('Deseja adicionar um produto? (Y ou N) ')
+                        
+                        # Encerra as compras
+                        if add_produto_input in ('N', 'n'):
+                            break
+
+                        # ... mostrar os produtos disponíveis
+                        # ... ADICIONAR PRODUTO
+                        # exigir receita
+                    
+                    # Finalização das compras
+                    print('Finalizando compras ...')
+                    print(f'O valor das compra é de R${v.valor_total:.2f}')
+                    print(f'O cliente recebeu desconto de {v.desconto_total():.2%}\n')
+                    print(f'Valor a ser pago: R$ {v.valor_total_final:.2f}')
+                    
+
+                    # Adição do registro de venda nos registros
+                    # ... ADICIONAR NO HISTÓRICO
+                    cliente_inst.ADD_compra( v )
+
+                    sleep(2)
+                    print('Fim da compra!')
+                    sleep(1)
                 
             elif opcao_cliente in ('N', 'n'):
                 # Verificação se continua cadastro
@@ -82,7 +122,7 @@ class OpcoesMenu:
             else:
                 print('Opção inválida\n')
 
-            busca_continua = OpcoesMenu.manter_busca_continua()
+            busca_continua = OpcoesMenu.manter_operacao_continua()
 
         sleep(1)
         

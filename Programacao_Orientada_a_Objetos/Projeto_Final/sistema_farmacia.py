@@ -5,6 +5,8 @@ from cliente_pkg import Cliente_Error, CPF_Error
 from medicamento_pkg import MedicamentoFito, MedicamentoQuimio
 from medicamento_pkg import CadastroMedicamentos
 
+from vendas_pck.cadastro_vendas import CadastroVendas
+
 def print_log(*v, log=True):
     if log:
         print(*v)
@@ -13,7 +15,7 @@ class Farmacia:
     def __init__(self, preset=True, log=True):
         self.cadastro_clientes = CadastroClientes()
         self.cadastro_medicamentos = CadastroMedicamentos()
-        self.cadastro_vendas = None
+        self.cadastro_vendas = CadastroVendas()
 
         if preset:
             # CADASTRO DE CLIENTES DE TESTE
