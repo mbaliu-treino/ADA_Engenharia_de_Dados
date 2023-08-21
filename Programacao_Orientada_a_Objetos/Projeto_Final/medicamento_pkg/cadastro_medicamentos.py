@@ -83,7 +83,7 @@ class CadastroMedicamentos:
         dict_mdcmts = { mdcmt.nome: mdcmt for mdcmt in self.__cadastro_medicamentos }
         mdcmts_cresc = sorted(dict_mdcmts)
         for i in mdcmts_cresc:
-            print( dict_mdcmts[ mdcmts_cresc ].detalhes_str )
+            print( dict_mdcmts[ i ].detalhes_str )
 
 
         
