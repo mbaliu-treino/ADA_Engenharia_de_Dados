@@ -1,9 +1,9 @@
-from cliente import CadastroClientes
-from cliente import Cliente
-from cliente import Cliente_Error, CPF_Error
+from cliente_pkg import CadastroClientes
+from cliente_pkg import Cliente
+from cliente_pkg import Cliente_Error, CPF_Error
 
-from medicamento import MedicamentoFito, MedicamentoQuimio
-from medicamento import CadastroMedicamentos
+from medicamento_pkg import MedicamentoFito, MedicamentoQuimio
+from medicamento_pkg import CadastroMedicamentos
 
 
 class Farmacia:

@@ -1,12 +1,9 @@
 # PROGRAMA DE E-COMMERCE DE FARMÁCIA
-from typing import Optional
 
 import sistema_farmacia
 import sef_layouts
 from time import sleep
 
-from cliente import CadastroClientes
-from cliente import Cliente
 from iface_pck.opcoes_menu import OpcoesMenu
 
 

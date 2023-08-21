@@ -20,6 +20,7 @@ class OpcoesMenu:
         sleep(1)
         pass
 
+
     @staticmethod
     def manter_busca_continua():
         """ Função auxiliar de entrada de usuário para manter o loop """
@@ -28,6 +29,9 @@ class OpcoesMenu:
             return True
         elif opcao_busca == '2':
             return False
+        else:
+            return True
+
 
     @staticmethod
     def opcao_2_busca_medicamento(sistema):
@@ -40,9 +44,7 @@ class OpcoesMenu:
         """
 
         # Display
-        print('2 - Buscar medicamento')
-
-        
+        print('2 - Buscar medicamento')       
             
         busca_continua = True
         while busca_continua:
@@ -119,6 +121,7 @@ class OpcoesMenu:
                 sleep(1)
                 busca_continua = OpcoesMenu.manter_busca_continua()
         
+
     @staticmethod
     def opcao_3_busca_cliente(sistema):
         """ Implementa a interface de busca de cliente. 
@@ -142,8 +145,6 @@ class OpcoesMenu:
             # Validação
             if obj_cliente == None:
                 print('CPF não encontrado!')
-                #TODO -> Voltar ao menu
-                #TODO -> Pedir outro CPF
             else:
                 print(  f'\nDADOS DO CLIENTE\n--------------------\n'
                         + f'  Nome do cliente: {obj_cliente.nome},\n'
@@ -153,6 +154,7 @@ class OpcoesMenu:
                         + f'  Histórico de compras:\n...\n...\n...')
             sleep(1)
             busca_continua = OpcoesMenu.manter_busca_continua()
+
 
     @staticmethod
     def opcao_4_relatorio_vendas(sistema):
