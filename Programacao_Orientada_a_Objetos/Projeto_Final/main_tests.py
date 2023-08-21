@@ -1,15 +1,6 @@
-# python -Bc "for p in __import__('pathlib').Path('.').rglob('*.py[co]') : p.unlink()"
-# python -Bc "for p in __import__('pathlib').Path('.').rglob('__pycache__') : p.rmdir()"
-# 
+# import testes.TESTE_Vendas
 
-import sistema_farmacia
-import sef_layouts
-from time import sleep
+# TESTE_Vendas
 
-from iface_pck.opcoes_menu import OpcoesMenu
-from vendas_pck.venda import Vendas
-
-
-sistema = sistema_farmacia.Farmacia()
-
-v = Vendas()
+from testes import TESTE_Sistema
+TESTE_Sistema.teste_farma()

@@ -1,9 +1,7 @@
 # PROGRAMA DE E-COMMERCE DE FARMÁCIA
-
 import sistema_farmacia
 import sef_layouts
 from time import sleep
-
 from iface_pck.opcoes_menu import OpcoesMenu
 
 
@@ -13,18 +11,18 @@ if __name__ == '__main__':
     print('======== SISTEMA DE E-COMMERCE DE FARMÁRCIA ========')
 
     # Inicialização do sistema (cadastros)
-    sistema = sistema_farmacia.Farmacia()
+    sistema = sistema_farmacia.Farmacia(preset=True, log=False)
     print('(Sistema inicializado com sucesso)')
     
 
 
     while True:
         # MENU
-        print('== MENU ==')
+        print('\n== MENU ==')
         print( sef_layouts.menu() )
 
-        # opcao = input('\nInsira o número da operação desejada: ')
-        opcao = '2' #DEBUG
+        opcao = input('\nInsira o número da operação desejada: ')
+        # opcao = '2' #DEBUG
 
         if opcao == '1':
             # Venda
