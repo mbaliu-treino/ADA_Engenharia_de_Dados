@@ -1,5 +1,6 @@
 # PROGRAMA DE E-COMMERCE DE FARMÁCIA
 from typing import Optional
+
 import sistema_farmacia
 import sef_layouts
 from time import sleep

@@ -25,7 +25,8 @@ class MedicamentoFito(Medicamento):
     def __init__(self, nome: str, composto_principal: str, laboratorio: str, descricao: str, preco: float):
         super().__init__(nome, composto_principal, laboratorio, descricao, float(preco))
 
-    def mostrar_detalhes(self):
+    @property
+    def detalhes_str(self):
         tipo_mdcmt = 'Fitoterápico'
         return _iface_detalhes_mdcmt.format(
             self.nome,
