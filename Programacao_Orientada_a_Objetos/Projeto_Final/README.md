@@ -16,3 +16,8 @@ O código traz uma implementação para um sistema de aplicação para e-commerc
 
 
 ## MODO DE USAR
+
+**FUNCIONALIDADES**
+
+* Verificação de CPF já existente
+* Validação de código verificador de CPF
