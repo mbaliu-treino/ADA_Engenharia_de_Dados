@@ -1,12 +1,11 @@
 # PROGRAMA DE E-COMMERCE DE FARMÁCIA
+from iface_pck.opcoes_menu import OpcoesMenu
 import sistema_farmacia
 import sef_layouts
 from time import sleep
-from iface_pck.opcoes_menu import OpcoesMenu
 
 
-
-if __name__ == '__main__':
+def main():
     # Execução do sistema de e-commerce.
     print('======== SISTEMA DE E-COMMERCE DE FARMÁRCIA ========')
 
@@ -62,3 +61,6 @@ if __name__ == '__main__':
     sleep(1)
     print('Sistema finalizado. Até em breve!')
     
+
+if __name__ == '__main__':
+    main()
